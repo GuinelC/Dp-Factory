@@ -16,6 +16,7 @@ En utilisant des interfaces, on favorise la séparation des préoccupations. Cha
 et cela réduit les dépendances directes entre les classes. Cela rend le système moins couplé, facilitant ainsi la maintenance et la modification du code sans impacter l'ensemble du système.
 
 exemple code:
+```php
 <?php
 // Interface
 interface Messenger {
@@ -47,14 +48,16 @@ $emailMessenger = new EmailMessenger();
 $notifier = new Notifier($emailMessenger);
 $notifier->notifyUser("Hello, this is a notification.");
 ?>
+\```
 
 2 - il mieux préférer la composition à l’héritage car,  La composition permet de construire des objets en agrégeant d'autres objets, offrant une plus grande flexibilité pour changer ou étendre le comportement. Vous pouvez facilement ajouter ou supprimer des fonctionnalités en modifiant la composition, sans toucher à la hiérarchie de l'héritage.
 
 exemple de code:
 Dans cet exemple, la classe Car utilise la composition en incorporant un objet Engine. Cela permet de changer le type de moteur (par exemple, passer d'un moteur électrique à un moteur à essence) sans modifier la hiérarchie d'héritage, ce qui rend le code plus flexible.
 
-<?php
 
+```php
+<?php
 // Interface ou classe abstraite représentant une fonctionnalité
 interface Engine {
     public function start();
@@ -85,6 +88,7 @@ class Car {
 $electricEngine = new ElectricEngine();
 $car = new Car($electricEngine);
 $car->start();
+\```
 
 
 3 - Les interfaces permettent de déclarer un ensemble de méthodes que plusieurs classes peuvent partager, sans imposer une hiérarchie d'héritage. Cela favorise la flexibilité, la modularité et le polymorphisme dans le code.
@@ -124,8 +128,9 @@ Mon exemple de code se trouve dans: index.php
 
 
 ### Code Source de la Démo:
-<?php
 
+```php
+<?php
 // Interface de produit électronique
 interface ElectronicProduct {
     public function displaySpecifications();
@@ -246,3 +251,5 @@ displayProductInformation(new HeadphonesCreator(), $headphonesWarehouse, 2);
 $smartphoneWarehouse->listProducts();
 $laptopWarehouse->listProducts();
 $headphonesWarehouse->listProducts();# Dp-Factory
+
+\```
